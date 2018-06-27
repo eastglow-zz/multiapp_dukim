@@ -48,7 +48,7 @@
   [./traveling_deltafunction]
     type = BodyForce
     variable = S
-    value = 1
+    value = 10
     function = delta_function
   [../]
 []

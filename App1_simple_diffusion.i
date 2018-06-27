@@ -14,6 +14,13 @@
   [../]
 []
 
+[AuxVariables]
+  [./S]
+    order = FIRST
+    family = LAGRANGE
+  [../]
+[]
+
 [ICs]
   [./Center_circle]
     type = SmoothCircleIC
@@ -47,19 +54,9 @@
     variable = T
   [../]
   [./Source_term]
-    type = BodyForce
+    type = CoupledForce
     variable = T
-    function = delta_function
-    value = 1
-  [../]
-[]
-
-[Functions]
-  [./delta_function]
-    type = ParsedFunction
-    value = 'r := (x-xc)^2 + (y-yc)^2 - radi^2; if(r <= 0, 1, 0)'
-    vars = 'xc yc radi'
-    vals = '30 30 2'
+    v = S
   [../]
 []
 
