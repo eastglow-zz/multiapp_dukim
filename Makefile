@@ -50,6 +50,8 @@ APPLICATION_NAME   := multiapp_dukim
 BUILD_EXEC         := yes
 GEN_REVISION       := no
 include            $(FRAMEWORK_DIR)/app.mk
-
 ###############################################################################
 # Additional special case targets should be added here
+# external apps
+#ADDITIONAL_LIBS    := print_one_to_ten
+#include            $(CURDIR)/myexternlib.mk
